@@ -1,5 +1,5 @@
 from typing import List
-from models.Metric import Metric
+from metrics.Metric import Metric
 import json
 
 def parse_metric_json(metric_json: str) -> Metric:

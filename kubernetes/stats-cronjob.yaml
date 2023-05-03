@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: stats-consumer-cron
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: stats-consumer
+            image: registry.cloud.okteto.net/prod-szwtomas/stats-consumer:latest
+            imagePullPolicy: Always
+            command: ["python3", "main.py"]
+          restartPolicy: OnFailure

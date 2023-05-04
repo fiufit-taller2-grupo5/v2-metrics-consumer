@@ -13,4 +13,7 @@ spec:
             image: registry.cloud.okteto.net/prod-szwtomas/stats-consumer:latest
             imagePullPolicy: Always
             command: ["python3", "main.py"]
+            envFrom:
+              - configMapRef:
+                  name: metrics-consumer-config
           restartPolicy: OnFailure

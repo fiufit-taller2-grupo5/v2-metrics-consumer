@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: metrics-consumer-config
+  labels:
+    app: metrics-consumer
+data:
+  MONGO_USER: fiufitmetricscron
+  MONGO_PASSWORD: Q7Re0TXRSyJsfUfY
